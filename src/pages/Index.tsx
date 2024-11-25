@@ -2,7 +2,15 @@ import { useState, useEffect } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ClipboardList, FileCheck, BarChart3, Workflow } from "lucide-react";
+import { 
+  ClipboardList, 
+  FileCheck, 
+  BarChart3, 
+  Workflow, 
+  CheckCircle2, 
+  ArrowRight, 
+  Star 
+} from "lucide-react";
 
 const Index = () => {
   const { toast } = useToast();
@@ -73,6 +81,7 @@ const Index = () => {
 
       {/* Main content */}
       <div className="container mx-auto px-4 pt-20 pb-12 relative z-10">
+        {/* Hero Section */}
         <div className="max-w-4xl mx-auto text-center animate-fadeIn">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-green-600">
             The Change We've All Been Waiting For
@@ -108,7 +117,7 @@ const Index = () => {
             </div>
           </form>
 
-          {/* Features */}
+        {/* Features Section */}
           <div className="grid md:grid-cols-2 gap-8 text-left">
             <div className="p-6 bg-slate-800/50 rounded-xl backdrop-blur-sm">
               <ClipboardList className="h-12 w-12 text-emerald-400 mb-4" />
@@ -142,6 +151,109 @@ const Index = () => {
                 tasks and improve efficiency.
               </p>
             </div>
+          </div>
+
+        {/* How It Works Section */}
+        <div className="max-w-4xl mx-auto mt-32 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-green-600">
+            How It Works
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="relative">
+              <div className="bg-slate-800/50 p-6 rounded-xl backdrop-blur-sm">
+                <div className="w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-xl font-bold">1</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Sign Up</h3>
+                <p className="text-gray-400">Create your account and configure your company profile</p>
+              </div>
+              <ArrowRight className="hidden md:block absolute top-1/2 -right-4 text-emerald-400 transform -translate-y-1/2" />
+            </div>
+            <div className="relative">
+              <div className="bg-slate-800/50 p-6 rounded-xl backdrop-blur-sm">
+                <div className="w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-xl font-bold">2</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Import Data</h3>
+                <p className="text-gray-400">Seamlessly migrate your existing records and documents</p>
+              </div>
+              <ArrowRight className="hidden md:block absolute top-1/2 -right-4 text-emerald-400 transform -translate-y-1/2" />
+            </div>
+            <div className="bg-slate-800/50 p-6 rounded-xl backdrop-blur-sm">
+              <div className="w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-xl font-bold">3</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Go Live</h3>
+              <p className="text-gray-400">Start managing your operations more efficiently</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Benefits Section */}
+        <div className="max-w-4xl mx-auto mt-32">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-green-600">
+            Key Benefits
+          </h2>
+          <div className="space-y-8">
+            {[
+              {
+                title: "Streamlined Compliance",
+                description: "Automatically track and manage regulatory requirements, reducing compliance risks by up to 75%"
+              },
+              {
+                title: "Increased Efficiency",
+                description: "Reduce manual data entry by 90% with automated document processing and workflow management"
+              },
+              {
+                title: "Cost Savings",
+                description: "Cut operational costs by up to 30% through optimized route planning and resource allocation"
+              }
+            ].map((benefit, index) => (
+              <div key={index} className="flex items-start gap-4 bg-slate-800/50 p-6 rounded-xl backdrop-blur-sm">
+                <CheckCircle2 className="h-6 w-6 text-emerald-400 flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
+                  <p className="text-gray-400">{benefit.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Testimonials Section */}
+        <div className="max-w-4xl mx-auto mt-32">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-green-600">
+            What Our Customers Say
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              {
+                name: "John Smith",
+                role: "Operations Manager",
+                company: "NJ Waste Solutions",
+                content: "This platform has transformed how we manage our operations. The regulatory compliance features alone have saved us countless hours."
+              },
+              {
+                name: "Sarah Johnson",
+                role: "CEO",
+                company: "EcoWaste Management",
+                content: "The best investment we've made for our business. The ROI was evident within the first month of implementation."
+              }
+            ].map((testimonial, index) => (
+              <div key={index} className="bg-slate-800/50 p-6 rounded-xl backdrop-blur-sm">
+                <div className="flex items-center mb-4">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <Star key={star} className="h-5 w-5 text-emerald-400 fill-current" />
+                  ))}
+                </div>
+                <p className="text-gray-300 mb-4 italic">"{testimonial.content}"</p>
+                <div>
+                  <p className="font-semibold">{testimonial.name}</p>
+                  <p className="text-sm text-gray-400">{testimonial.role}</p>
+                  <p className="text-sm text-emerald-400">{testimonial.company}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
