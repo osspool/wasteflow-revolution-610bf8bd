@@ -18,7 +18,7 @@ export const ProblemSolutionSection = () => {
         </p>
       </div>
       
-      <div className="grid md:grid-cols-2 gap-8 items-stretch">
+      <div className="grid md:grid-cols-2 gap-8 items-stretch mb-12">
         {/* Problems Card */}
         <div className="bg-gradient-to-br from-red-500/10 to-transparent p-1 rounded-2xl">
           <div className="bg-slate-800/90 p-8 rounded-2xl h-full backdrop-blur-sm border border-red-500/10">
@@ -66,7 +66,7 @@ export const ProblemSolutionSection = () => {
               <h3 className="text-2xl font-semibold text-white">The WasteSync Solution</h3>
             </div>
             
-            <div className="space-y-6 mb-8">
+            <div className="space-y-6">
               <div className="flex items-start gap-4">
                 <span className="p-2 rounded-lg bg-emerald-500/10 text-emerald-400">
                   <Zap className="h-5 w-5" />
@@ -95,16 +95,19 @@ export const ProblemSolutionSection = () => {
                 </div>
               </div>
             </div>
-
-            <Button 
-              size="lg"
-              className="w-full bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white px-6 py-6 rounded-xl shadow-lg hover:shadow-xl transform transition-all hover:-translate-y-1 group"
-            >
-              Start Your Free Demo
-              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </Button>
           </div>
         </div>
+      </div>
+
+      {/* Centered Demo Button */}
+      <div className="flex justify-center">
+        <Button 
+          size="lg"
+          className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white px-12 py-6 rounded-xl shadow-lg hover:shadow-xl transform transition-all hover:-translate-y-1 group"
+        >
+          Start Your Free Demo
+          <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+        </Button>
       </div>
     </div>
   );
