@@ -1,19 +1,14 @@
+
 import React from "react";
 import { Star } from "lucide-react";
 
 export const TestimonialsSection = () => {
   const testimonials = [
     {
-      name: "John Smith",
-      role: "Operations Manager",
-      company: "NJ Waste Solutions",
-      content: "This platform has transformed how we manage our operations. The regulatory compliance features alone have saved us countless hours."
-    },
-    {
-      name: "Sarah Johnson",
+      name: "Tyler Pam",
       role: "CEO",
-      company: "EcoWaste Management",
-      content: "The best investment we've made for our business. The ROI was evident within the first month of implementation."
+      company: "MJ Trash Removal",
+      content: "WasteSync has saved us hours of compliance work and helped us get paid on time!"
     }
   ];
 
@@ -22,7 +17,7 @@ export const TestimonialsSection = () => {
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-green-600">
         What Our Customers Say
       </h2>
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="grid md:grid-cols-1 gap-8">
         {testimonials.map((testimonial, index) => (
           <div key={index} className="bg-slate-800/50 p-6 rounded-xl backdrop-blur-sm">
             <div className="flex items-center mb-4">
