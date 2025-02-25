@@ -23,7 +23,7 @@ export const HeroSection = () => {
 
       <div className="mt-8 relative rounded-lg overflow-hidden shadow-2xl">
         <img
-          src="/lovable-uploads/a6b92d83-a2d3-4937-8948-be4f98fb34d2.png"
+          src="/lovable-uploads/93f0eb85-5a31-4369-ae1c-85fba09e4169.png"
           alt="WasteSync Dashboard"
           className="w-full rounded-lg"
         />
