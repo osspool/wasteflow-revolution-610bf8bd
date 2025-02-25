@@ -33,6 +33,10 @@ export const HeroSection = () => {
     {
       src: "/lovable-uploads/681d77bf-e2c7-4e48-b9f2-d0fe25a261ce.png",
       alt: "WasteSync Invoices"
+    },
+    {
+      src: "/lovable-uploads/6663b569-72e1-454b-ab7e-c75a91de778c.png",
+      alt: "WasteSync Forms Generator"
     }
   ];
 
