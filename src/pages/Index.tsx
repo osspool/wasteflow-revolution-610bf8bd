@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { FloatingParticles } from "@/components/landing/FloatingParticles";
 import { HeroSection } from "@/components/landing/HeroSection";
@@ -38,7 +39,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 text-white">
+    <div className="min-h-screen bg-white">
       <FloatingParticles />
       <div className="container mx-auto px-4 pt-20 pb-12 relative z-10">
         <HeroSection timeLeft={timeLeft} email={email} setEmail={setEmail} />
