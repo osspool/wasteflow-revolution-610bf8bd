@@ -1,44 +1,10 @@
 
-import React, { useEffect } from "react";
+import React from "react";
 import { Button } from "@/components/ui/button";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
-import { ClipboardCheck, FileText, BarChart3, Banknote } from "lucide-react";
-import useEmblaCarousel from 'embla-carousel-react';
 
 export const HeroSection = () => {
-  const carouselItems = [
-    {
-      image: "photo-1488590528505-98d2b5aba04b",
-      icon: <ClipboardCheck className="h-6 w-6" />,
-      text: "Automated Compliance Management",
-      description: "Streamline your compliance processes with intelligent automation"
-    },
-    {
-      image: "photo-1487058792275-0ad4aaf24ca7",
-      icon: <FileText className="h-6 w-6" />,
-      text: "Smart Document Processing",
-      description: "Process documents efficiently with AI-powered solutions"
-    },
-    {
-      image: "photo-1501854140801-50d01698950b",
-      icon: <BarChart3 className="h-6 w-6" />,
-      text: "Real-time Analytics Dashboard",
-      description: "Make data-driven decisions with comprehensive analytics"
-    },
-    {
-      image: "photo-1523712999610-f77fbcfc3843",
-      icon: <Banknote className="h-6 w-6" />,
-      text: "Streamlined Invoicing & Payments",
-      description: "Simplify your financial operations with automated billing"
-    },
-  ];
-
   return (
-    <div className="max-w-4xl mx-auto text-center animate-fadeIn">
+    <div className="max-w-6xl mx-auto text-center animate-fadeIn">
       <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-green-600">
         Streaming Waste Management with one Powerful Platform
       </h1>
@@ -55,37 +21,12 @@ export const HeroSection = () => {
         </Button>
       </div>
 
-      <div className="mt-8">
-        <Carousel
-          opts={{
-            align: "center",
-            loop: true,
-          }}
-          className="w-full max-w-xl mx-auto"
-        >
-          <CarouselContent>
-            {carouselItems.map((item, index) => (
-              <CarouselItem key={index} className="basis-full">
-                <div className="relative group overflow-hidden rounded-lg">
-                  <img
-                    src={`https://source.unsplash.com/${item.image}`}
-                    alt={item.text}
-                    className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center p-4 text-center">
-                    <div className="p-2 rounded-full bg-purple-600/20 mb-2">
-                      {React.cloneElement(item.icon, {
-                        className: "h-6 w-6 text-purple-400",
-                      })}
-                    </div>
-                    <h3 className="text-white font-semibold mb-1">{item.text}</h3>
-                    <p className="text-gray-300 text-sm">{item.description}</p>
-                  </div>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
+      <div className="mt-8 relative rounded-lg overflow-hidden shadow-2xl">
+        <img
+          src="/lovable-uploads/a6b92d83-a2d3-4937-8948-be4f98fb34d2.png"
+          alt="WasteSync Dashboard"
+          className="w-full rounded-lg"
+        />
       </div>
     </div>
   );
