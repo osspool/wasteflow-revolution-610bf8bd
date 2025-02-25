@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -74,4 +75,24 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+:root[class~="light"] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 250 252 / var(--tw-bg-opacity));
+  color: rgb(15 23 42);
+}
+
+:root[class~="dark"] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(15 23 42 / var(--tw-bg-opacity));
+  color: rgb(248 250 252);
+}
+
+.light .bg-gradient-custom {
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+}
+
+.dark .bg-gradient-custom {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
 }
