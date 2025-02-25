@@ -1,6 +1,12 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { DemoRequestForm } from "./DemoRequestForm";
 import { ArrowRight, XCircle, CheckCircle2, Zap } from "lucide-react";
 
 export const ProblemSolutionSection = () => {
@@ -101,13 +107,20 @@ export const ProblemSolutionSection = () => {
 
       {/* Centered Demo Button */}
       <div className="flex justify-center">
-        <Button 
-          size="lg"
-          className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white px-12 py-6 rounded-xl shadow-lg hover:shadow-xl transform transition-all hover:-translate-y-1 group"
-        >
-          Start Your Free Demo
-          <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-        </Button>
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button 
+              size="lg"
+              className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white px-12 py-6 rounded-xl shadow-lg hover:shadow-xl transform transition-all hover:-translate-y-1 group"
+            >
+              Start Your Free Demo
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Button>
+          </DialogTrigger>
+          <DialogContent className="bg-slate-900 border-emerald-500/20 p-6 max-w-4xl">
+            <DemoRequestForm />
+          </DialogContent>
+        </Dialog>
       </div>
     </div>
   );

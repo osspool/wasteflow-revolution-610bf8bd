@@ -8,6 +8,12 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { DemoRequestForm } from "./DemoRequestForm";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -50,12 +56,19 @@ export const HeroSection = () => {
       </p>
 
       <div className="mb-12">
-        <Button 
-          size="lg"
-          className="bg-purple-600 hover:bg-purple-700 text-white text-lg px-8 py-6 rounded-lg shadow-lg hover:shadow-xl transform transition-all hover:-translate-y-1"
-        >
-          Try a Free Demo
-        </Button>
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button 
+              size="lg"
+              className="bg-purple-600 hover:bg-purple-700 text-white text-lg px-8 py-6 rounded-lg shadow-lg hover:shadow-xl transform transition-all hover:-translate-y-1"
+            >
+              Try a Free Demo
+            </Button>
+          </DialogTrigger>
+          <DialogContent className="bg-slate-900 border-emerald-500/20 p-6 max-w-4xl">
+            <DemoRequestForm />
+          </DialogContent>
+        </Dialog>
       </div>
 
       <div className="mt-8 relative">

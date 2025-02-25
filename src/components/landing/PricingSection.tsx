@@ -2,6 +2,12 @@
 import React from "react";
 import { DollarSign, Infinity, ShieldCheck, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { DemoRequestForm } from "./DemoRequestForm";
 
 export const PricingSection = () => {
   const features = [
@@ -58,12 +64,19 @@ export const PricingSection = () => {
 
           {/* CTA Button */}
           <div className="flex justify-center">
-            <Button 
-              className="relative group bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white px-10 py-6 text-lg h-auto transition-all duration-300 rounded-full shadow-lg hover:shadow-emerald-500/25 hover:scale-105"
-            >
-              <span className="relative z-10">Try a free demo today!</span>
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-400/20 to-green-400/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            </Button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button 
+                  className="relative group bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white px-10 py-6 text-lg h-auto transition-all duration-300 rounded-full shadow-lg hover:shadow-emerald-500/25 hover:scale-105"
+                >
+                  <span className="relative z-10">Try a free demo today!</span>
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-400/20 to-green-400/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="bg-slate-900 border-emerald-500/20 p-6 max-w-4xl">
+                <DemoRequestForm />
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
 
