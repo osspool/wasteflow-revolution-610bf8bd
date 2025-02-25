@@ -96,7 +96,7 @@ export const DemoRequestForm = () => {
             />
             
             <Textarea 
-              placeholder="How many drivers do you have? What business lines do you operate?"
+              placeholder="How did you hear about us? (Optional)"
               className="bg-slate-900/50 border-emerald-500/20 focus:border-emerald-500/50 min-h-[100px]"
             />
             
