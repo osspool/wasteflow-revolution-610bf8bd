@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Carousel,
@@ -7,6 +7,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import { ClipboardCheck, FileText, BarChart3, Banknote } from "lucide-react";
+import useEmblaCarousel from 'embla-carousel-react';
 
 export const HeroSection = () => {
   const features = [
@@ -52,7 +53,6 @@ export const HeroSection = () => {
             align: "start",
             loop: true,
             dragFree: true,
-            autoplay: true,
           }}
           className="w-full max-w-xl mx-auto"
         >
