@@ -2,6 +2,12 @@
 import React from "react";
 import { Rocket, Calendar, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { DemoRequestForm } from "./DemoRequestForm";
 
 export const DemoCtaSection = () => {
   return (
@@ -46,12 +52,19 @@ export const DemoCtaSection = () => {
                 </div>
               </div>
               
-              <Button 
-                className="group relative bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white px-8 py-6 text-lg h-auto rounded-full shadow-lg hover:shadow-emerald-500/25 hover:scale-105 transition-all duration-300"
-              >
-                <span>Try a Free Demo Now!</span>
-                <ArrowRight className="w-5 h-5 ml-2 inline-block transition-transform group-hover:translate-x-1" />
-              </Button>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button 
+                    className="group relative bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white px-8 py-6 text-lg h-auto rounded-full shadow-lg hover:shadow-emerald-500/25 hover:scale-105 transition-all duration-300"
+                  >
+                    <span>Try a Free Demo Now!</span>
+                    <ArrowRight className="w-5 h-5 ml-2 inline-block transition-transform group-hover:translate-x-1" />
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="bg-slate-900 border-emerald-500/20 p-6 max-w-4xl">
+                  <DemoRequestForm />
+                </DialogContent>
+              </Dialog>
             </div>
           </div>
 
