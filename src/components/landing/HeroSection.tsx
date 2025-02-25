@@ -8,8 +8,13 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
 
 export const HeroSection = () => {
+  const [api, setApi] = useState<any>();
+  const [current, setCurrent] = useState(0);
+
   const images = [
     {
       src: "/lovable-uploads/93f0eb85-5a31-4369-ae1c-85fba09e4169.png",
@@ -20,6 +25,16 @@ export const HeroSection = () => {
       alt: "WasteSync Customers"
     }
   ];
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
 
   return (
     <div className="max-w-6xl mx-auto text-center animate-fadeIn">
@@ -40,7 +55,24 @@ export const HeroSection = () => {
       </div>
 
       <div className="mt-8 relative">
+        <div className="flex justify-center gap-2 mb-4">
+          {images.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => api?.scrollTo(index)}
+              className={cn(
+                "w-3 h-3 rounded-full transition-all",
+                current === index 
+                  ? "bg-purple-600" 
+                  : "bg-gray-400 hover:bg-purple-400"
+              )}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
+        
         <Carousel
+          setApi={setApi}
           opts={{
             align: "start",
             loop: true,
@@ -60,8 +92,6 @@ export const HeroSection = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="left-4" />
-          <CarouselNext className="right-4" />
         </Carousel>
       </div>
     </div>
