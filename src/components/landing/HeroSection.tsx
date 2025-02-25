@@ -58,20 +58,19 @@ export const HeroSection = () => {
       <div className="mt-8">
         <Carousel
           opts={{
-            align: "start",
+            align: "center",
             loop: true,
-            dragFree: true,
           }}
           className="w-full max-w-xl mx-auto"
         >
           <CarouselContent>
             {carouselItems.map((item, index) => (
-              <CarouselItem key={index} className="basis-full md:basis-1/2 lg:basis-1/3">
+              <CarouselItem key={index} className="basis-full">
                 <div className="relative group overflow-hidden rounded-lg">
                   <img
                     src={`https://source.unsplash.com/${item.image}`}
                     alt={item.text}
-                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                    className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center p-4 text-center">
                     <div className="p-2 rounded-full bg-purple-600/20 mb-2">
