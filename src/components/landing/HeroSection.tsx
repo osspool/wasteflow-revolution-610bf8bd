@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -38,19 +37,19 @@ export const HeroSection = ({ timeLeft, email, setEmail }: HeroSectionProps) => 
 
   return (
     <div className="max-w-4xl mx-auto text-center animate-fadeIn">
-      <h1 className="font-inter text-5xl md:text-6xl font-bold mb-6 text-slate-900 tracking-tight leading-tight">
+      <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-green-600">
         The Change We've All Been Waiting For
       </h1>
-      <p className="text-xl md:text-2xl text-slate-600 mb-12 leading-relaxed">
+      <p className="text-xl md:text-2xl text-gray-300 mb-12">
         Redefining how waste management companies handle regulatory documents,
         operations, invoicing, and contracts—all under one platform.
       </p>
 
       <div className="grid grid-cols-4 gap-4 max-w-xl mx-auto mb-12">
         {Object.entries(timeLeft).map(([unit, value]) => (
-          <div key={unit} className="text-center p-4 bg-indigo-50 rounded-lg">
-            <div className="text-3xl md:text-4xl font-bold text-indigo-600">{value}</div>
-            <div className="text-sm text-slate-600 capitalize">{unit}</div>
+          <div key={unit} className="text-center p-4 bg-slate-800/50 rounded-lg backdrop-blur-sm">
+            <div className="text-3xl md:text-4xl font-bold text-emerald-400">{value}</div>
+            <div className="text-sm text-gray-400 capitalize">{unit}</div>
           </div>
         ))}
       </div>
@@ -62,9 +61,9 @@ export const HeroSection = ({ timeLeft, email, setEmail }: HeroSectionProps) => 
             placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="bg-white border-slate-200"
+            className="bg-slate-800/50 border-slate-700"
           />
-          <Button type="submit" className="bg-indigo-600 hover:bg-indigo-700 text-white">
+          <Button type="submit" className="bg-emerald-600 hover:bg-emerald-700">
             Get Early Access
           </Button>
         </div>

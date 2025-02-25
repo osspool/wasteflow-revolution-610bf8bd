@@ -1,4 +1,3 @@
-
 import React from "react";
 
 export const FloatingParticles = () => {
@@ -14,7 +13,7 @@ export const FloatingParticles = () => {
             animationDelay: `${Math.random() * 2}s`,
           }}
         >
-          <div className="h-2 w-2 bg-indigo-500 rounded-full opacity-20" />
+          <div className="h-2 w-2 bg-emerald-500 rounded-full opacity-20" />
         </div>
       ))}
     </div>
