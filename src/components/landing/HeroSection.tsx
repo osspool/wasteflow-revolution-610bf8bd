@@ -10,22 +10,30 @@ import { ClipboardCheck, FileText, BarChart3, Banknote } from "lucide-react";
 import useEmblaCarousel from 'embla-carousel-react';
 
 export const HeroSection = () => {
-  const features = [
+  const carouselItems = [
     {
+      image: "photo-1488590528505-98d2b5aba04b",
       icon: <ClipboardCheck className="h-6 w-6" />,
       text: "Automated Compliance Management",
+      description: "Streamline your compliance processes with intelligent automation"
     },
     {
+      image: "photo-1487058792275-0ad4aaf24ca7",
       icon: <FileText className="h-6 w-6" />,
       text: "Smart Document Processing",
+      description: "Process documents efficiently with AI-powered solutions"
     },
     {
+      image: "photo-1501854140801-50d01698950b",
       icon: <BarChart3 className="h-6 w-6" />,
       text: "Real-time Analytics Dashboard",
+      description: "Make data-driven decisions with comprehensive analytics"
     },
     {
+      image: "photo-1523712999610-f77fbcfc3843",
       icon: <Banknote className="h-6 w-6" />,
       text: "Streamlined Invoicing & Payments",
+      description: "Simplify your financial operations with automated billing"
     },
   ];
 
@@ -57,17 +65,23 @@ export const HeroSection = () => {
           className="w-full max-w-xl mx-auto"
         >
           <CarouselContent>
-            {features.map((feature, index) => (
+            {carouselItems.map((item, index) => (
               <CarouselItem key={index} className="basis-full md:basis-1/2 lg:basis-1/3">
-                <div className="flex items-center justify-center gap-3 p-4">
-                  <div className="p-2 rounded-full bg-purple-600/10">
-                    {React.cloneElement(feature.icon, {
-                      className: "h-6 w-6 text-purple-600",
-                    })}
+                <div className="relative group overflow-hidden rounded-lg">
+                  <img
+                    src={`https://source.unsplash.com/${item.image}`}
+                    alt={item.text}
+                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center p-4 text-center">
+                    <div className="p-2 rounded-full bg-purple-600/20 mb-2">
+                      {React.cloneElement(item.icon, {
+                        className: "h-6 w-6 text-purple-400",
+                      })}
+                    </div>
+                    <h3 className="text-white font-semibold mb-1">{item.text}</h3>
+                    <p className="text-gray-300 text-sm">{item.description}</p>
                   </div>
-                  <p className="text-gray-300 text-sm md:text-base font-medium">
-                    {feature.text}
-                  </p>
                 </div>
               </CarouselItem>
             ))}
