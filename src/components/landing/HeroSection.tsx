@@ -23,6 +23,10 @@ export const HeroSection = () => {
     {
       src: "/lovable-uploads/59170aa6-8250-4add-a0dd-87b951026e52.png",
       alt: "WasteSync Customers"
+    },
+    {
+      src: "/lovable-uploads/681d77bf-e2c7-4e48-b9f2-d0fe25a261ce.png",
+      alt: "WasteSync Invoices"
     }
   ];
 
