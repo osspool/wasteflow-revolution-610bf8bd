@@ -13,7 +13,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 text-white">
+    <div className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 dark:from-slate-900 dark:to-slate-800 light:from-white light:to-gray-100 text-slate-900 dark:text-white transition-colors duration-300">
       <FloatingParticles />
       <div className="fixed top-4 right-4 z-50">
         <ThemeToggle />
